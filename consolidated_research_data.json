@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "date": "2025-05-31",
+    "total_items": 16,
+    "consolidated_items": 12,
+    "deduplication_rate": 25.0,
+    "analysts": [
+      "Person 1",
+      "Person 2"
+    ],
+    "sectors_covered": [
+      "Fintech",
+      "Power & Utilities",
+      "Trade & Policy",
+      "Healthcare",
+      "Technology",
+      "Energy",
+      "Financial Services",
+      "Automotive",
+      "Banking"
+    ]
+  },
+  "consolidated_topics": [
+    {
+      "id": "consolidated_1",
+      "title": "India-UK FTA",
+      "priority": "high",
+      "sector": "Trade & Policy",
+      "analysts": [
+        "Person 2",
+        "Person 1"
+      ],
+      "companies": [
+        "Multiple Sectors"
+      ],
+      "key_points": [
+        "Trade deal will make whisky, gin, automobiles, medical devices cheaper. 99% of UK products get tariff elimination. Social security exemption saves 20% of salaries for Indian workers.",
+        "Bilateral trade projected to reach $120B by 2030. Whisky tariffs reduced from 150% to 75%, eventually to 40%. Social security exemption benefits 60,000+ IT employees."
+      ],
+      "sources": [
+        "Business Standard",
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 85
+    },
+    {
+      "id": "consolidated_2",
+      "title": "Bank of Baroda Results",
+      "priority": "medium",
+      "sector": "Banking",
+      "analysts": [
+        "Person 2",
+        "Person 1"
+      ],
+      "companies": [
+        "Bank of Baroda"
+      ],
+      "key_points": [
+        "Net profit rose 3.3% YoY to \u20b95,048 crore. NIM contracted 40 bps due to elevated deposit costs. Treasury income doubled to \u20b91,559 crore.",
+        "Net profit up 3.3% to \u20b95,048 crore in Q4. NIM contracted to 3.02% from 3.18% YoY. Cost of deposits peaked in March quarter but moderating since."
+      ],
+      "sources": [
+        "Business Standard",
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 70
+    },
+    {
+      "id": "consolidated_3",
+      "title": "Stock Exchange Results",
+      "priority": "medium",
+      "sector": "Financial Services",
+      "analysts": [
+        "Person 2",
+        "Person 1"
+      ],
+      "companies": [
+        "BSE, NSE",
+        "NSE",
+        "BSE"
+      ],
+      "key_points": [
+        "BSE profit jumped 5x to \u20b9494 crore. NSE profit at \u20b92,650 crore, down 31% sequentially. Revenue growth driven by transaction charges.",
+        "Consolidated profit of \u20b92,650 crore, down 31% sequentially. Revenue declined 13.3% to \u20b93,771 crore due to reduced volumes in cash and derivatives.",
+        "Net profit soared 125.8% to \u20b9493.7 crore in Q4. Revenue rose 10.2% to \u20b9846.6 crore. Profit up 362% YoY, revenue jumped 75% YoY."
+      ],
+      "sources": [
+        "Business Standard",
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 70
+    },
+    {
+      "id": "individual_2",
+      "title": "US Pharma Domestic Push",
+      "priority": "medium",
+      "sector": "Healthcare",
+      "analysts": [
+        "Person 1"
+      ],
+      "companies": [
+        "Pharmaceuticals"
+      ],
+      "key_points": [
+        "Trump executive order to promote domestic drug manufacturing. FDA directed to expedite approval process for new domestic pharmaceutical plants."
+      ],
+      "sources": [
+        "Business Standard"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_4",
+      "title": "PE/VC Landscape Intensification",
+      "priority": "medium",
+      "sector": "Financial Services",
+      "analysts": [
+        "Person 1"
+      ],
+      "companies": [
+        "Private Equity"
+      ],
+      "key_points": [
+        "Number of PEs in India increased 60-65% between 2016-2024. Buyouts share rose from 37% in 2022 to 51% in 2024. 83% of deals over 5 years old expected for exits in 2025."
+      ],
+      "sources": [
+        "Business Standard"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_5",
+      "title": "Paytm Q4 Loss",
+      "priority": "medium",
+      "sector": "Fintech",
+      "analysts": [
+        "Person 1"
+      ],
+      "companies": [
+        "Paytm"
+      ],
+      "key_points": [
+        "Consolidated loss of \u20b9545 crore vs \u20b9550 crore YoY. One-time ESOP expense of \u20b9492 crore. MTUs dropped 25% YoY. UPI incentives down to \u20b970 crore from \u20b9288 crore."
+      ],
+      "sources": [
+        "Business Standard"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_6",
+      "title": "Tata Motors Split Approved",
+      "priority": "medium",
+      "sector": "Automotive",
+      "analysts": [
+        "Person 1"
+      ],
+      "companies": [
+        "Tata Motors"
+      ],
+      "key_points": [
+        "Shareholders approved plan to split automaker into two listed companies, separating passenger and commercial vehicle arms including JLR brand."
+      ],
+      "sources": [
+        "Business Standard"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_7",
+      "title": "Adani Power Thermal Deal",
+      "priority": "medium",
+      "sector": "Power & Utilities",
+      "analysts": [
+        "Person 1"
+      ],
+      "companies": [
+        "Adani Power"
+      ],
+      "key_points": [
+        "Secured 1,500 MW thermal contract with UP at \u20b95.383/unit for 25 years. Fixed charge \u20b93.727/unit, fuel charge \u20b91.656/unit."
+      ],
+      "sources": [
+        "Business Standard"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_10",
+      "title": "MUFG-HDFC Bank Deal",
+      "priority": "high",
+      "sector": "Banking",
+      "analysts": [
+        "Person 2"
+      ],
+      "companies": [
+        "HDFC Bank, MUFG"
+      ],
+      "key_points": [
+        "MUFG in advanced talks to buy minority stake in HDB Financial Services for \u20b912,000 crore. Seeking up to 19% stake. HDB valuation declined to $8-8.5B from $10-12B."
+      ],
+      "sources": [
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 80
+    },
+    {
+      "id": "individual_11",
+      "title": "Uber-Trendyol Acquisition",
+      "priority": "medium",
+      "sector": "Technology",
+      "analysts": [
+        "Person 2"
+      ],
+      "companies": [
+        "Uber, Trendyol"
+      ],
+      "key_points": [
+        "Uber agreed to buy 85% of Turkish delivery platform for $700M. Trendyol delivered 200M+ orders in 2024, generating $2B gross bookings."
+      ],
+      "sources": [
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_15",
+      "title": "Oil Prices Surge",
+      "priority": "medium",
+      "sector": "Energy",
+      "analysts": [
+        "Person 2"
+      ],
+      "companies": [
+        "Oil & Gas"
+      ],
+      "key_points": [
+        "Oil climbed 4% on higher demand in Europe/China and Middle East tensions. Brent rose to $62.60, WTI gained to $59.55."
+      ],
+      "sources": [
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    },
+    {
+      "id": "individual_16",
+      "title": "TPG-SCHOTT Poonawalla Deal",
+      "priority": "medium",
+      "sector": "Healthcare",
+      "analysts": [
+        "Person 2"
+      ],
+      "companies": [
+        "SCHOTT Poonawalla, TPG"
+      ],
+      "key_points": [
+        "TPG acquired 35% stake from SII. Total investment from TPG and Novo Holdings amounts to $300M. SCHOTT retains 50%, SII holds minority stake."
+      ],
+      "sources": [
+        "Economic Times"
+      ],
+      "date": "2025-05-31",
+      "impact_score": 60
+    }
+  ],
+  "priority_breakdown": {
+    "high": 2,
+    "medium": 10,
+    "low": 0
+  },
+  "sector_analysis": {
+    "Fintech": 1,
+    "Power & Utilities": 1,
+    "Trade & Policy": 1,
+    "Healthcare": 2,
+    "Technology": 1,
+    "Energy": 1,
+    "Financial Services": 2,
+    "Automotive": 1,
+    "Banking": 2
+  }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aequitas Research Dashboard - Daily Investment Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="brand">
+                    <div class="logo">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1748673162/gpt4o_images/dnninyewendpn6i4dnji.png" alt="Aequitas Logo" width="40" height="40">
+                    </div>
+                    <div class="brand-text">
+                        <h1>Aequitas Research Dashboard</h1>
+                        <span class="subtitle">Daily Investment Intelligence</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="date-display" id="currentDate"></div>
+                    <div class="export-dropdown">
+                        <button class="btn btn--secondary" id="exportBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export
+                        </button>
+                        <div class="export-menu" id="exportMenu">
+                            <button onclick="exportData('pdf')">Export PDF</button>
+                            <button onclick="exportData('excel')">Export Excel</button>
+                            <button onclick="exportData('json')">Export JSON</button>
+                            <button onclick="shareData()">Share Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="navigation">
+            <div class="container">
+                <div class="nav-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="sectors">Sector Analysis</button>
+                    <button class="tab-btn" data-tab="analysts">Analyst Comparison</button>
+                    <button class="tab-btn" data-tab="timeline">Timeline</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Overview Tab -->
+                <div class="tab-content active" id="overview">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon high-priority">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="highPriorityCount">0</div>
+                                <div class="stat-label">High Priority</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon medium-priority">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 12h8"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="mediumPriorityCount">0</div>
+                                <div class="stat-label">Medium Priority</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon low-priority">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="lowPriorityCount">0</div>
+                                <div class="stat-label">Low Priority</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon efficiency">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="efficiencyRate">0%</div>
+                                <div class="stat-label">Deduplication Rate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filters -->
+                    <div class="filters-section">
+                        <div class="search-bar">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input type="text" id="searchInput" placeholder="Search topics, companies, or sectors...">
+                        </div>
+                        <div class="filter-controls">
+                            <select id="priorityFilter" class="form-control">
+                                <option value="">All Priorities</option>
+                                <option value="high">High Priority</option>
+                                <option value="medium">Medium Priority</option>
+                                <option value="low">Low Priority</option>
+                            </select>
+                            <select id="sectorFilter" class="form-control">
+                                <option value="">All Sectors</option>
+                            </select>
+                            <select id="analystFilter" class="form-control">
+                                <option value="">All Analysts</option>
+                                <option value="Person 1">Person 1</option>
+                                <option value="Person 2">Person 2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Topics Grid -->
+                    <div class="topics-grid" id="topicsGrid">
+                        <!-- Topics will be dynamically loaded here -->
+                    </div>
+                </div>
+
+                <!-- Sector Analysis Tab -->
+                <div class="tab-content" id="sectors">
+                    <div class="sector-analysis">
+                        <div class="chart-container">
+                            <h3>Sector Distribution</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="sectorChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="sector-breakdown" id="sectorBreakdown">
+                            <!-- Sector breakdown will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analyst Comparison Tab -->
+                <div class="tab-content" id="analysts">
+                    <div class="analyst-comparison">
+                        <div class="analyst-column">
+                            <h3>Person 1 Research</h3>
+                            <div class="analyst-topics" id="person1Topics">
+                                <!-- Person 1 topics will be populated here -->
+                            </div>
+                        </div>
+                        <div class="analyst-column">
+                            <h3>Person 2 Research</h3>
+                            <div class="analyst-topics" id="person2Topics">
+                                <!-- Person 2 topics will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Tab -->
+                <div class="tab-content" id="timeline">
+                    <div class="timeline-view">
+                        <h3>Research Timeline</h3>
+                        <div class="timeline-container" id="timelineContainer">
+                            <!-- Timeline items will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Topic Details -->
+    <div class="modal" id="topicModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading research data...</div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+            <span id="notificationText"></span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
