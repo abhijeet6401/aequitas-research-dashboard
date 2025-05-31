@@ -17,7 +17,7 @@
   - By Sector
   - By Analyst
 - Real-time search and filtering
-- Interactive charts and visualizations
+- Interactive charts and visualisations
 - Mobile-responsive layout
 
 ### ⚙️ Automation Ready
@@ -27,9 +27,3 @@
 - Fully automated deployment pipeline
 
 ---
-
-## 📂 Tech Stack
-- Frontend: HTML/CSS, JavaScript (React/Vue/Other)
-- Backend: Node.js/Python (customizable to your stack)
-- Data Processing: Excel, JSON
-- CI/CD: GitHub Actions
