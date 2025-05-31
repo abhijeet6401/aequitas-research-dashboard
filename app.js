@@ -397,7 +397,7 @@ function renderTopicsGrid(topics) {
 }
 
 // Fixed modal functionality
-function showTopicDetails(topicId) {
+function openTopicModal(topicId) {
     const topic = researchData.consolidatedTopics.find(t => t.id === topicId);
     if (!topic) return;
     
