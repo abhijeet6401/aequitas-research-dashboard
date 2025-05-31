@@ -396,84 +396,71 @@ function renderTopicsGrid(topics) {
     `).join('');
 }
 
-// Fixed modal functionality
 function openTopicModal(topicId) {
-    const topic = researchData.consolidatedTopics.find(t => t.id === topicId);
+    const topic = researchData.consolidated_topics.find(t => t.id === topicId);
     if (!topic) return;
-    
+
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
     const modal = document.getElementById('topicModal');
-    const title = document.getElementById('modalTitle');
-    const content = document.getElementById('modalContent');
     
-    if (!modal || !title || !content) {
-        console.error('Modal elements not found');
-        return;
-    }
-    
-    title.textContent = topic.title;
-    
-    content.innerHTML = `
-        <div class="topic-details">
-            <div class="detail-section">
-                <h4>Priority Level</h4>
-                <span class="priority-badge ${topic.priority}">${topic.priority.toUpperCase()}</span>
+    if (!modalTitle || !modalBody || !modal) return;
+
+    modalTitle.textContent = topic.title;
+    modalBody.innerHTML = `
+        <div class="modal-topic-details">
+            <div class="topic-meta-full">
+                <div class="meta-row">
+                    <strong>Priority:</strong> 
+                    <span class="priority-badge ${topic.priority}">${topic.priority}</span>
+                </div>
+                <div class="meta-row">
+                    <strong>Sector:</strong> ${topic.sector}
+                </div>
+                <div class="meta-row">
+                    <strong>Companies:</strong> ${topic.companies.join(', ')}
+                </div>
+                <div class="meta-row">
+                    <strong>Analysts:</strong> ${topic.analysts.join(', ')}
+                </div>
+                <div class="meta-row">
+                    <strong>Impact Score:</strong> ${topic.impact_score}/100
+                </div>
             </div>
             
-            <div class="detail-section">
-                <h4>Sector</h4>
-                <p>${topic.sector}</p>
+            <div class="key-points-section">
+                <h4>Key Research Points</h4>
+                <div class="key-points-list">
+                    ${topic.key_points.map(point => `<div class="key-point">• ${point}</div>`).join('')}
+                </div>
             </div>
             
-            <div class="detail-section">
-                <h4>Analysts</h4>
-                <p>${topic.analysts.join(', ')}</p>
-            </div>
-            
-            <div class="detail-section">
-                <h4>Key Points</h4>
-                <ul>
-                    ${topic.keyPoints.map(point => `<li>${point}</li>`).join('')}
-                </ul>
-            </div>
-            
-            <div class="detail-section">
-                <h4>Market Impact</h4>
-                <p>${topic.impact}</p>
+            <div class="sources-section">
+                <h4>Sources</h4>
+                <div class="sources-list">
+                    ${topic.sources.map(source => `<span class="source-tag">${source}</span>`).join('')}
+                </div>
             </div>
         </div>
+        
+        <style>
+            .modal-topic-details { font-size: 14px; }
+            .meta-row { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+            .key-points-section, .sources-section { margin-top: 24px; }
+            .key-points-section h4, .sources-section h4 { margin-bottom: 12px; color: var(--aequitas-primary); }
+            .key-point { margin-bottom: 8px; line-height: 1.5; }
+            .sources-list { display: flex; flex-wrap: wrap; gap: 8px; }
+            .source-tag { background: var(--aequitas-light); color: var(--aequitas-primary); padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+        </style>
     `;
     
-    // Show modal with proper z-index
     modal.classList.add('show');
-    document.body.classList.add('modal-open');
 }
 
 function closeModal() {
     const modal = document.getElementById('topicModal');
-    if (modal) {
-        modal.classList.remove('show');
-        document.body.classList.remove('modal-open');
-    }
+    if (modal) modal.classList.remove('show');
 }
-
-// Add event listeners for modal
-document.addEventListener('DOMContentLoaded', function() {
-    // Close modal when clicking overlay or close button
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('modal') || 
-            e.target.classList.contains('modal-overlay') || 
-            e.target.classList.contains('modal-close')) {
-            closeModal();
-        }
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
-});
 
 function renderSectorChart() {
     const canvas = document.getElementById('sectorChart');
