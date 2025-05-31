@@ -194,17 +194,18 @@
     </div>
 
     <!-- Modal for Topic Details -->
-    <div class="modal" id="topicModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle"></h2>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Modal content will be populated here -->
-            </div>
+    <div id="topicModal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle"></h2>
+            <button class="modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="modalContent"></div>
         </div>
     </div>
+</div>
 
     <!-- Loading Indicator -->
     <div class="loading" id="loading">
