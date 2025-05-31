@@ -1,35 +1,35 @@
-Aequitas Research Dashboard
-A professional research consolidation dashboard that transforms Excel analyst data into actionable investment insights.
+# 📈 Aequitas Research Dashboard
 
-🚀 Live Demo
-Production Dashboard: View Live Demo
+**A professional research consolidation dashboard that transforms Excel-based analyst data into actionable investment insights.**
 
-📊 Features
-Data Consolidation
-87% deduplication rate while preserving 100% of insights
+## 📊 Features
 
-Intelligent merging of overlapping research topics
+### 🔄 Data Consolidation
+- **87% deduplication rate** while preserving **100% of insights**
+- Intelligent merging of overlapping research topics
+- Analyst attribution maintained across consolidated content
+- Priority-based classification: `High`, `Medium`, `Low`
 
-Analyst attribution maintained across consolidated content
+### 💼 Professional Interface
+- Clean, intuitive design optimized for **fund managers**
+- Multiple view modes:
+  - Overview
+  - By Sector
+  - By Analyst
+- Real-time search and filtering
+- Interactive charts and visualizations
+- Mobile-responsive layout
 
-Priority-based classification (High/Medium/Low)
+### ⚙️ Automation Ready
+- **JSON-based** data structure for easy API integration
+- **GitHub Actions** workflow for daily updates
+- Scripts for **Excel-to-JSON** conversion
+- Fully automated deployment pipeline
 
-Professional Interface
-Clean, intuitive design optimized for fund managers
+---
 
-Multiple view perspectives: Overview, By Sector, By Analyst
-
-Real-time search and filtering capabilities
-
-Interactive charts and visualizations
-
-Mobile-responsive design
-
-Automation Ready
-JSON-based data structure for API integration
-
-GitHub Actions workflow for daily updates
-
-Excel-to-JSON conversion scripts
-
-Automated deployment pipeline
+## 📂 Tech Stack
+- Frontend: HTML/CSS, JavaScript (React/Vue/Other)
+- Backend: Node.js/Python (customizable to your stack)
+- Data Processing: Excel, JSON
+- CI/CD: GitHub Actions
